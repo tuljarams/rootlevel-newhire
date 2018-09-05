@@ -1,0 +1,21 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "account.json",
+      "machine_type": "f1-micro",
+      "image_name": "rootlevel-ngnix-webserver",
+      "project_id": "testing-docker-v1",
+      "source_image": "ubuntu-1604-xenial-v20170328",
+      "ssh_username": "packer",
+      "zone": "us-east1-b"
+    }
+  ],
+  "provisioners": [
+      {
+           "type":"shell",
+           "script":"provisioner.sh"
+      }
+
+  ]
+  }
